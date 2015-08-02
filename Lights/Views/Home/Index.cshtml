@@ -1,0 +1,42 @@
+﻿@using Lights.Controllers
+<div class="centerdiv">
+    @foreach (RemoteDevice device in ViewBag.Devices)
+    {
+        <div>
+            <div class="left33" align="left">
+                <button class="butn" onclick="turnOff(@device.Id)">off</button>
+            </div>
+            <div class="left33" align="center">
+                @device.Name
+            </div>
+            <div class="left33" align="right">
+                <button class="butn" onclick="turnOn(@device.Id)">on</button>
+            </div>
+        </div>
+    }
+    <div>
+        <div class="left33" align="left">
+            <button class="butn" onclick="turnAllOff()">off</button>
+        </div>
+        <div class="left33" align="center">
+            alla
+        </div>
+        <div class="left33" align="right">
+            <button class="butn" onclick="turnAllOn()">on</button>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    function turnOn(i) {
+        $.post("home/turnon", { id: i });
+    };
+    function turnOff(i) {
+        $.post("home/turnoff", { id: i });
+    };
+    function turnAllOn() {
+        $.post("home/turnallon");
+    };
+    function turnAllOff() {
+        $.post("home/turnalloff");
+    };
+</script>
