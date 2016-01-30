@@ -20,18 +20,22 @@ namespace Lights.SelfHost
 
         public void TurnAllOff()
         {
+            Console.WriteLine("All off");
         }
 
         public void TurnAllOn()
         {
+            Console.WriteLine("All on");
         }
 
         public void TurnOff(int id)
         {
+            Console.WriteLine(string.Format("Id {0} off", id));
         }
 
         public void TurnOn(int id)
         {
+            Console.WriteLine(string.Format("Id {0} on", id));
         }
     }
 
