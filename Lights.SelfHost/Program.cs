@@ -1,15 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Nancy;
+using Nancy.Hosting.Self;
+using System;
 
 namespace Lights.SelfHost
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
+            using (var host = new NancyHost(new Uri("http://localhost:8180")))
+            {
+                host.Start();
+                Console.ReadLine();
+            }
+        }
+    }
+
+    public class LightsModule : NancyModule
+    {
+        public LightsModule() : base("/")
+        {
+            Get["/"] = _ => { return "hello world!"; };
         }
     }
 }
