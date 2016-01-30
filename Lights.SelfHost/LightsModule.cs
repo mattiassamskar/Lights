@@ -4,10 +4,12 @@ namespace Lights.SelfHost
 {
     public class LightsModule : NancyModule
     {
-        private IRemoteDeviceHandler _remoteDeviceHandler = new FakeDeviceHandler();
+        private IRemoteDeviceHandler _remoteDeviceHandler;
 
-        public LightsModule() : base("/lights")
+        public LightsModule(IRemoteDeviceHandler remoteDeviceHandler) : base("/lights")
         {
+            _remoteDeviceHandler = remoteDeviceHandler;
+
             Get["/"] = _ => { return _remoteDeviceHandler.GetRemoteDevices(); };
             Put["/on"] = _ => { return TurnAllDevicesOn(); };
             Put["/off"] = _ => { return TurnAllDevicesOff(); };
