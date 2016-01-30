@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ServiceProcess;
 
-namespace Lights.Controllers
+namespace Lights.SelfHost
 {
     public class ServiceHandler
     {

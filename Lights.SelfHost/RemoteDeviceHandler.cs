@@ -4,9 +4,38 @@ using System.Linq;
 using System.Threading;
 using TelldusWrapper;
 
-namespace Lights.Controllers
+namespace Lights.SelfHost
 {
-    public class RemoteDeviceHandler
+    public class FakeDeviceHandler : IRemoteDeviceHandler
+    {
+        public List<RemoteDevice> GetRemoteDevices()
+        {
+            return new List<RemoteDevice>
+            {
+                new RemoteDevice {Id = 1, Name = "lampa", On = true},
+                new RemoteDevice {Id = 2, Name = "soffa", On = true},
+                new RemoteDevice {Id = 3, Name = "lamino", On = true}
+            };
+        }
+
+        public void TurnAllOff()
+        {
+        }
+
+        public void TurnAllOn()
+        {
+        }
+
+        public void TurnOff(int id)
+        {
+        }
+
+        public void TurnOn(int id)
+        {
+        }
+    }
+
+    public class RemoteDeviceHandler : IRemoteDeviceHandler
     {
         readonly object _lockObject = new object();
         private const int Timeout = 300;
@@ -14,13 +43,6 @@ namespace Lights.Controllers
 
         public List<RemoteDevice> GetRemoteDevices()
         {
-            //return new List<RemoteDevice>
-            //{
-            //    new RemoteDevice {Id = 1, Name = "lampa", On = true},
-            //    new RemoteDevice {Id = 2, Name = "soffa", On = true},
-            //    new RemoteDevice {Id = 3, Name = "lamino", On = true}
-            //};
-
             if (_remoteDevices.Any())
                 return _remoteDevices;
 

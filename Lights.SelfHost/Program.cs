@@ -1,6 +1,6 @@
-﻿using Nancy;
-using Nancy.Hosting.Self;
+﻿using Nancy.Hosting.Self;
 using System;
+using System.Configuration;
 
 namespace Lights.SelfHost
 {
@@ -8,19 +8,14 @@ namespace Lights.SelfHost
     {
         static void Main(string[] args)
         {
-            using (var host = new NancyHost(new Uri("http://localhost:8180")))
+            var port = ConfigurationManager.AppSettings["port"];
+
+            using (var host = new NancyHost(new Uri("http://localhost:" + port)))
             {
+                Console.WriteLine("Host listening on port " + port);
                 host.Start();
                 Console.ReadLine();
             }
-        }
-    }
-
-    public class LightsModule : NancyModule
-    {
-        public LightsModule() : base("/lights")
-        {
-            Get["/"] = _ => { return "hello world!"; };
         }
     }
 }

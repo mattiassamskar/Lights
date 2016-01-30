@@ -1,4 +1,4 @@
-﻿namespace Lights.Controllers
+﻿namespace Lights.SelfHost
 {
     public class RemoteDevice
     {
