@@ -18,7 +18,7 @@ namespace Lights.SelfHost
 
     public class LightsModule : NancyModule
     {
-        public LightsModule() : base("/")
+        public LightsModule() : base("/lights")
         {
             Get["/"] = _ => { return "hello world!"; };
         }
