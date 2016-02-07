@@ -4,9 +4,9 @@ namespace Lights.SelfHost
 {
     public class LightsModule : NancyModule
     {
-        private IRemoteDeviceHandler _remoteDeviceHandler;
+        private IRemoteDeviceService _remoteDeviceHandler;
 
-        public LightsModule(IRemoteDeviceHandler remoteDeviceHandler) : base("/lights")
+        public LightsModule(IRemoteDeviceService remoteDeviceHandler) : base("/lights")
         {
             _remoteDeviceHandler = remoteDeviceHandler;
 

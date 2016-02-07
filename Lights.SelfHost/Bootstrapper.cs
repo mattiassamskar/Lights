@@ -7,7 +7,8 @@ namespace Lights.SelfHost
         protected override void ConfigureApplicationContainer(TinyIoCContainer container)
         {
             base.ConfigureApplicationContainer(container);
-            container.Register<IRemoteDeviceHandler, RemoteDeviceHandler>().AsSingleton();
+            //container.Register<IRemoteDeviceHandler, RemoteDeviceHandler>().AsSingleton();
+            container.Register<IRemoteDeviceService, FakeDeviceService>().AsSingleton();
         }
     }
 }

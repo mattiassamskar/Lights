@@ -6,7 +6,7 @@ using TelldusWrapper;
 
 namespace Lights.SelfHost
 {
-    public class RemoteDeviceHandler : IRemoteDeviceHandler
+    public class RemoteDeviceService : IRemoteDeviceService 
     {
         readonly object _lockObject = new object();
         private const int Timeout = 300;

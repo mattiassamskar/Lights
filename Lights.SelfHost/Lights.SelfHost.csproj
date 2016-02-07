@@ -57,13 +57,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bootstrapper.cs" />
-    <Compile Include="FakeDeviceHandler.cs" />
-    <Compile Include="IRemoteDeviceHandler.cs" />
+    <Compile Include="FakeDeviceService.cs" />
+    <Compile Include="IRemoteDeviceService.cs" />
     <Compile Include="LightsModule.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RemoteDevice.cs" />
-    <Compile Include="RemoteDeviceHandler.cs" />
+    <Compile Include="RemoteDeviceService.cs" />
     <Compile Include="ServiceHandler.cs" />
   </ItemGroup>
   <ItemGroup>

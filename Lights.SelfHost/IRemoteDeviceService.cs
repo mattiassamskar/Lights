@@ -2,7 +2,7 @@
 
 namespace Lights.SelfHost
 {
-    public interface IRemoteDeviceHandler
+    public interface IRemoteDeviceService
     {
         List<RemoteDevice> GetRemoteDevices();
         void TurnOn(int id);

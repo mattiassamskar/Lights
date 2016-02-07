@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Lights.SelfHost
 {
-    public class FakeDeviceHandler : IRemoteDeviceHandler
+    public class FakeDeviceService : IRemoteDeviceService
     {
         public List<RemoteDevice> GetRemoteDevices()
         {
