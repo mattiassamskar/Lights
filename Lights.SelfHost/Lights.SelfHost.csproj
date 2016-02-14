@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bootstrapper.cs" />
+    <Compile Include="ContentModule.cs" />
     <Compile Include="FakeDeviceService.cs" />
     <Compile Include="IRemoteDeviceService.cs" />
     <Compile Include="LightsModule.cs" />
@@ -71,6 +72,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\index.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="TelldusCore.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
