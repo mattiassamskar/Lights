@@ -1,4 +1,5 @@
 ﻿using Nancy;
+using Nancy.Bootstrapper;
 using Nancy.Conventions;
 using Nancy.TinyIoc;
 namespace Lights.SelfHost
@@ -17,6 +18,16 @@ namespace Lights.SelfHost
             base.ConfigureConventions(nancyConventions);
 
             nancyConventions.StaticContentsConventions.Add(StaticContentConventionBuilder.AddDirectory(@"/", @"/Content"));
+        }
+        protected override void ApplicationStartup(TinyIoCContainer container, IPipelines pipelines)
+        {
+            pipelines.AfterRequest.AddItemToStartOfPipeline((ctx) =>
+            {
+                ctx.CheckForIfNonMatch();
+                ctx.CheckForIfModifiedSince();
+            });
+
+            base.ApplicationStartup(container, pipelines);
         }
     }
 }

@@ -61,6 +61,7 @@
     <Compile Include="FakeDeviceService.cs" />
     <Compile Include="IRemoteDeviceService.cs" />
     <Compile Include="LightsModule.cs" />
+    <Compile Include="NancyModuleExtensions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RemoteDevice.cs" />
@@ -73,6 +74,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\index.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\lights.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\site.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="TelldusCore.dll">
