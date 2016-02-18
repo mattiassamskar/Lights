@@ -12,10 +12,10 @@ body {
     display: inline-block;
     background: royalblue;
     padding: 10px;
-    width: 70px;
-    height: 70px;
-    margin-top: 10px;
-    line-height: 70px;
+    width: 100px;
+    height: 100px;
+    margin-top: 50px;
+    line-height: 100px;
     color: white;
     font-weight: bold;
     font-size: 2em;
