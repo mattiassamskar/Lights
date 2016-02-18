@@ -7,8 +7,8 @@
     <ProjectGuid>{41428A6C-117F-457C-BEA7-C4D66795DAA4}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Lights.SelfHost</RootNamespace>
-    <AssemblyName>Lights.SelfHost</AssemblyName>
+    <RootNamespace>Lights</RootNamespace>
+    <AssemblyName>Lights</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

@@ -1,6 +1,6 @@
 ﻿using Nancy;
 
-namespace Lights.SelfHost
+namespace Lights
 {
     public class ContentModule : NancyModule
     {

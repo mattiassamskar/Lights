@@ -2,7 +2,7 @@
 using System;
 using System.Configuration;
 
-namespace Lights.SelfHost
+namespace Lights
 {
     public class Program
     {

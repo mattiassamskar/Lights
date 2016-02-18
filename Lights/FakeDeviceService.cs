@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Lights.SelfHost
+namespace Lights
 {
     public class FakeDeviceService : IRemoteDeviceService
     {

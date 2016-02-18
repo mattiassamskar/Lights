@@ -2,7 +2,7 @@
 using Nancy.Bootstrapper;
 using Nancy.Conventions;
 using Nancy.TinyIoc;
-namespace Lights.SelfHost
+namespace Lights
 {
     public class Bootstrapper : DefaultNancyBootstrapper
     {

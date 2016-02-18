@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading;
 using TelldusWrapper;
 
-namespace Lights.SelfHost
+namespace Lights
 {
     public class RemoteDeviceService : IRemoteDeviceService 
     {
