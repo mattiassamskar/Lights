@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
-using TelldusWrapper;
+using TellCore;
 
 namespace Lights.Controllers
 {
@@ -38,7 +38,10 @@ namespace Lights.Controllers
         {
             lock (_lockObject)
             {
-                TelldusNETWrapper.tdTurnOn(id);
+                using (var client = new TellCoreClient())
+                {
+                    client.TurnOn(id);
+                }
             }
         }
 
@@ -46,7 +49,10 @@ namespace Lights.Controllers
         {
             lock (_lockObject)
             {
-                TelldusNETWrapper.tdTurnOff(id);
+                using (var client = new TellCoreClient())
+                {
+                    client.TurnOff(id);
+                }
             }
         }
 
@@ -70,7 +76,12 @@ namespace Lights.Controllers
 
         private int GetNumberOfRemoteDevices()
         {
-            var numberOfdevices = TelldusNETWrapper.tdGetNumberOfDevices();
+            int numberOfdevices;
+
+            using (var client = new TellCoreClient())
+            {
+                numberOfdevices = client.GetNumberOfDevices();
+            }
 
             if (numberOfdevices < 0)
                 throw new Exception("Something went wrong when listing devices.");
@@ -80,16 +91,17 @@ namespace Lights.Controllers
 
         private RemoteDevice GetRemoteDevice(int index)
         {
-            var id = TelldusNETWrapper.tdGetDeviceId(index);
-
-            var remoteDevice = new RemoteDevice
+            using (var client = new TellCoreClient())
             {
-                Id = id,
-                Name = TelldusNETWrapper.tdGetName(id),
-                On = TelldusNETWrapper.tdLastSentCommand(id, TelldusNETWrapper.TELLSTICK_TURNON | TelldusNETWrapper.TELLSTICK_TURNOFF) == TelldusNETWrapper.TELLSTICK_TURNON
-            };
+                var id = client.GetDeviceId(index);
 
-            return remoteDevice;
+                return new RemoteDevice
+                {
+                    Id = id,
+                    Name = client.GetName(id),
+                    On = client.GetLastSentCommand(id, DeviceMethod.TurnOn | DeviceMethod.TurnOff) == DeviceMethod.TurnOn
+                };
+            }
         }
     }
 }
