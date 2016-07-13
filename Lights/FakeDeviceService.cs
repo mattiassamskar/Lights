@@ -9,9 +9,9 @@ namespace Lights
         {
             return new List<RemoteDevice>
             {
-                new RemoteDevice {Id = 1, Name = "lampa", On = true},
-                new RemoteDevice {Id = 2, Name = "soffa", On = true},
-                new RemoteDevice {Id = 3, Name = "lamino", On = true}
+                new RemoteDevice {Id = 1, Name = "device 1", On = true},
+                new RemoteDevice {Id = 2, Name = "device 2", On = true},
+                new RemoteDevice {Id = 3, Name = "device 3", On = true}
             };
         }
 
